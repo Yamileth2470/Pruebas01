@@ -1,17 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     emailjs.init("kMv1VxnMgh40Jjbye"); // Reemplaza con tu Public Key de Email.js
 
     const formulario = document.getElementById("formulario");
     const btn = document.getElementById("btn-enviar"); // Asegúrate de tener un botón con este ID
 
-    formulario.addEventListener("submit", function (evento) {
+    formulario.addEventListener("submit", function(evento) {
         evento.preventDefault(); // Evita el envío tradicional del formulario
 
         btn.value = 'Enviando...';
 
         const serviceID = 'lucianita13081'; // Reemplaza con tu Service ID de Email.js
         const templateID = 'template_1is0cja'; // Reemplaza con tu Template ID de Email.js
-    
+
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
                 btn.value = 'Enviar mensaje';
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Validación de campos
-    formulario.addEventListener("submit", function (evento) {
+    formulario.addEventListener("submit", function(evento) {
         let valido = true;
 
         document.querySelectorAll("input, textarea").forEach(campo => {
@@ -62,3 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
